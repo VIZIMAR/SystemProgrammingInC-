@@ -3,8 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #define LEN 20
-#define SIZE 256
-    char* s_gets(char*,int);
+char* s_gets(char*,int);
     struct exam{
         char name[LEN];
         char surname[LEN];
@@ -17,13 +16,11 @@ int main(int argc,char**argv){
     }
     FILE* fdIn,*fdOut;
     int cnt,i=0;
-    char buf[SIZE];
-    ssize_t nRd;
     printf("Input students count : ");
-    scanf(" %d",&cnt); // очистить входной поток
+    scanf(" %d",&cnt); 
     if (cnt==0)
         exit(EXIT_FAILURE);
-        while(getchar()!='\n')
+        while(getchar()!='\n') // очистить входной поток
             continue;
     if((fdIn=fopen(argv[1],"w"))==NULL){
             printf("%s ",argv[1]);
